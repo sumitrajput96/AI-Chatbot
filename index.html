@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT Clone</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      #loader1{
+        display: none;
+      }
+      body{
+        
+      }
+      h1{
+        margin: auto;
+        text-align: center;
+      }
+      /* Add basic styles for the loader */
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 30px;
+        height: 30px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+        margin: auto;
+        position: fixed;
+        left: 50%;
+        top: 40%;
+
+        display: none;
+      }
+
+      @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AI Verse</h1>
+    <div id="chat-container" style="margin: auto;">
+      <div id="loader1" style="top: 0px;left: 0px; position: fixed;height: 100vh;width: 100vw;background-color: rgba(0, 0, 0, 0.1);"> </div>
+      <div id="loader" class="loader"></div>
+    </div>
+    <div class="input-container" style="margin: auto;position: relative;left: -10px;">
+      <textarea
+        id="user-input"
+        placeholder="Type your message..."
+        onkeydown="if(event.keyCode === 13 && !event.shiftKey) { sendMessage(); event.preventDefault(); }"
+      ></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    <script src="chat.js"></script>
+  </body>
+</html>
